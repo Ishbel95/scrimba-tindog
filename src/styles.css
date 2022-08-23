@@ -19,7 +19,7 @@ img {
   max-width: 90%;
   width: 400px;
   margin: 1em auto;
-  padding: 0.3em;
+  padding: 0.6em;
 }
 
 .container {
@@ -39,8 +39,16 @@ img {
 }
 
 /* container-main */
+.container-main {
+  display: flex;
+  flex-direction: column;
+}
+.container-main .dog-info {
+  margin-top: -5em;
+  color: #fff;
+  padding-left: 1em;
+}
 .container-main img {
-  padding: 0.5em;
   border-radius: 15px;
 }
 
@@ -55,7 +63,7 @@ img {
   background: #fff;
   padding: 1em;
   border-radius: 50%;
-  margin: 0.3em 1em;
+  margin: 0.6em 1em 0.3em;
   box-shadow: 0px 10px 20px #e9e9ea;
   transition: all 250ms ease-in-out;
 }
