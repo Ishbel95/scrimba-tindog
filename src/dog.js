@@ -1,4 +1,4 @@
-class dog {
+class dogProfile {
   constructor(data) {
     Object.assign(this, data);
   }
@@ -14,4 +14,4 @@ class dog {
   }
 }
 
-export default dog;
+export default dogProfile;
