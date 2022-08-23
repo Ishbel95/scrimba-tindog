@@ -1,5 +1,3 @@
-import dogs from "/src/data.js";
-
 class dog {
   constructor(data) {
     Object.assign(this, data);
@@ -16,10 +14,4 @@ class dog {
   }
 }
 
-function render() {
-  console.log("hello");
-  document.getElementById("dog").innerHTML = newDog.getDogHtml();
-}
-
-const newDog = new dog(dogs[0]);
-render();
+export default dog;
