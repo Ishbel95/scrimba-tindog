@@ -10,7 +10,16 @@ function getNewDog() {
   return nextDogData ? new Dog(nextDogData) : {};
 }
 
-function nextDogProfile() {
+function setBadge() {
+  if (hasBeenLiked) {
+    console.log("heeee");
+    return `<img src="/images/badge-like.png"/>`;
+    render();
+  }
+  getNextDogProfile();
+}
+
+function getNextDogProfile() {
   if (dogArray.length > 0) {
     newDog = getNewDog();
     render();
@@ -27,16 +36,14 @@ document.getElementById("like").addEventListener("click", () => {
   console.log("hello");
   hasBeenLiked = true;
   hasBeenSwiped = false;
-  nextDogProfile();
+  setBadge();
 });
 document.getElementById("cross").addEventListener("click", () => {
   console.log("hello");
   hasBeenLiked = false;
   hasBeenSwiped = true;
-  nextDogProfile();
+  setBadge();
 });
 
 let newDog = getNewDog();
 render();
-
-// newDog.getDogHtml();
