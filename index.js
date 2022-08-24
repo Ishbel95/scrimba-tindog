@@ -33,6 +33,7 @@ document.getElementById("cross").addEventListener("click", () => {
   console.log("hello");
   hasBeenLiked = false;
   hasBeenSwiped = true;
+  nextDogProfile();
 });
 
 let newDog = getNewDog();
