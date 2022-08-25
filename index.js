@@ -47,6 +47,9 @@ function getNextDogProfile() {
       "dog"
     ).innerHTML = `<button id="btn-refresh">Refresh</button>`;
   }
+  document.getElementById("btn-refresh").addEventListener("click", () => {
+    location.reload(true);
+  });
 }
 
 function render() {
