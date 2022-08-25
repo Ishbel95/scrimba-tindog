@@ -18,8 +18,8 @@ class Dog {
       ${badge}
       <img src="/${avatar}" alt="dog looking at camera" />
       <div class="dog-info">
-          <p>${name}, ${age}</p>
-          <p>${bio}</p>
+          <p class="dog-info-title">${name}, ${age}</p>
+          <p class="dog-info-caption">${bio}</p>
       </div>
       `;
   }

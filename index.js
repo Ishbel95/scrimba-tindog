@@ -1,5 +1,5 @@
 import dogs from "/data.js";
-import Dog from "/DogConstructer.js";
+import Dog from "/DogConstructor.js";
 const dogArray = [0, 1, 2];
 
 function getNewDog(data) {
@@ -16,7 +16,7 @@ function badgeRender() {
   setTimeout(() => {
     getNextDogProfile();
     isWaiting = false;
-  }, 4000);
+  }, 2000);
 }
 
 document.getElementById("like").addEventListener("click", () => {
@@ -43,7 +43,9 @@ function getNextDogProfile() {
     console.log(newDog.hasBeenLiked);
     render();
   } else {
-    document.getElementById("dog").innerHTML = `<p>No more dogs</p>`;
+    document.getElementById(
+      "dog"
+    ).innerHTML = `<button id="btn-refresh">Refresh</button>`;
   }
 }
 
