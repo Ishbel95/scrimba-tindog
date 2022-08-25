@@ -51,6 +51,10 @@ img {
 .container-main img {
   border-radius: 15px;
 }
+.badge {
+  display: block;
+  width: 100%;
+}
 
 /* container-footer */
 .container-footer {

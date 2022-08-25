@@ -1,27 +1,46 @@
 import dogs from "/data.js";
-import Dog from "/Dog.js";
+import Dog from "/DogConstructer.js";
 const dogArray = [0, 1, 2];
-let hasBeenSwiped = false;
-let hasBeenLiked = false;
-let isWaiting = false;
 
-function getNewDog() {
-  const nextDogData = dogs[dogArray.shift()];
+function getNewDog(data) {
+  const nextDogData = data[dogArray.shift()];
   return nextDogData ? new Dog(nextDogData) : {};
 }
 
-function setBadge() {
-  if (hasBeenLiked) {
-    console.log("heeee");
-    return `<img src="/images/badge-like.png"/>`;
-    render();
-  }
-  getNextDogProfile();
+let newDog = new Dog(getNewDog(dogs));
+
+let isWaiting = false;
+
+function badgeRender() {
+  render();
+  setTimeout(() => {
+    getNextDogProfile();
+    isWaiting = false;
+  }, 4000);
 }
+
+document.getElementById("like").addEventListener("click", () => {
+  if (!isWaiting) {
+    newDog.hasBeenLiked = true;
+    newDog.hasBeenSwiped = false;
+    isWaiting = true;
+    badgeRender();
+  }
+});
+document.getElementById("cross").addEventListener("click", () => {
+  if (!isWaiting) {
+    newDog.hasBeenSwiped = true;
+    newDog.hasBeenLiked = false;
+    isWaiting = true;
+    badgeRender();
+  }
+});
 
 function getNextDogProfile() {
   if (dogArray.length > 0) {
-    newDog = getNewDog();
+    newDog = new Dog(getNewDog(dogs));
+    isWaiting = false;
+    console.log(newDog.hasBeenLiked);
     render();
   } else {
     document.getElementById("dog").innerHTML = `<p>No more dogs</p>`;
@@ -29,21 +48,8 @@ function getNextDogProfile() {
 }
 
 function render() {
+  console.log(newDog.hasBeenLiked);
   document.getElementById("dog").innerHTML = newDog.getDogHtml();
 }
 
-document.getElementById("like").addEventListener("click", () => {
-  console.log("hello");
-  hasBeenLiked = true;
-  hasBeenSwiped = false;
-  setBadge();
-});
-document.getElementById("cross").addEventListener("click", () => {
-  console.log("hello");
-  hasBeenLiked = false;
-  hasBeenSwiped = true;
-  setBadge();
-});
-
-let newDog = getNewDog();
 render();
