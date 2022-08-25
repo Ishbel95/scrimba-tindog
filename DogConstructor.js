@@ -4,9 +4,9 @@ class Dog {
   }
   setBadge() {
     if (this.hasBeenLiked) {
-      return `<img src="/images/badge-like.png" alt="like" class="badge"/>`;
+      return `<img src="/images/badge-like.png" alt="green like badge" class="badge"/>`;
     } else if (this.hasBeenSwiped) {
-      return `<img src="/images/badge-nope.png" alt="nope" class="badge"/>`;
+      return `<img src="/images/badge-nope.png" alt="red like badge" class="badge"/>`;
     } else {
       return ``;
     }
