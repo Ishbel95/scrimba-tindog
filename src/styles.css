@@ -92,7 +92,7 @@ img {
 #btn-refresh:hover,
 #btn-refresh:focus {
   background: #e7efff;
-  color: #fff;
+  color: rgb(146, 146, 146);
   text-shadow: 0 0 2px #e9e9ea;
 }
 
