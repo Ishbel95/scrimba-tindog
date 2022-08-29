@@ -47,7 +47,8 @@ img {
   flex-direction: column;
 }
 .container-main .dog-info {
-  margin-top: -6em;
+  margin-top: -7em;
+  margin-bottom: 1em;
   color: #fff;
   padding-left: 1em;
 }
@@ -66,12 +67,10 @@ img {
 .dog-info-title {
   font-weight: 600;
   font-size: 1.2rem;
-  margin-bottom: 0.8em;
 }
 .dog-info-caption {
   font-weight: 400;
   font-size: 1rem;
-  margin: 0;
 }
 
 #btn-refresh {
@@ -98,6 +97,7 @@ img {
 
 /* container-icon-footer */
 .container-icon-footer {
+  display: flex;
   justify-content: center;
 }
 
@@ -107,7 +107,7 @@ img {
   background: #fff;
   padding: 1em;
   border-radius: 50%;
-  margin: 2.3em 0.5em 0;
+  margin: 0 0.7em;
   box-shadow: 0px 10px 20px #e9e9ea;
   transition: all 250ms ease-in-out;
 }
@@ -124,9 +124,11 @@ img {
 /* media queries */
 
 @media (min-width: 334px) {
+  .container-main .dog-info {
+    margin-bottom: 3em;
+  }
   .footer-icon-cross,
   .footer-icon-like {
-    margin-top: 2.5em;
     width: 3.5em;
   }
   html {
