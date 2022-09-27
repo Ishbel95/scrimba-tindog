@@ -1,7 +1,11 @@
+// constructor for all dog profiles
+
 class Dog {
   constructor(data) {
+    // assign the data to this keyword
     Object.assign(this, data);
   }
+  // conditional rendering of badges
   setBadge() {
     if (this.hasBeenLiked) {
       return `<img src="/images/badge-like.png" alt="green like badge" class="badge"/>`;
@@ -12,6 +16,7 @@ class Dog {
     }
   }
   getDogHtml() {
+    // dog data object destructering and dog profile render
     const { name, avatar, age, bio } = this;
     const badge = this.setBadge();
     return `
